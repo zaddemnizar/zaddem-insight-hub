@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { BarChart3, Database, GraduationCap, Code2, ArrowRight, CheckCircle2 } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import TrainingCard from "@/components/TrainingCard";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import heroImage from "@/assets/hero-consulting.jpg";
 
 const Landing = () => {
@@ -57,8 +59,27 @@ const Landing = () => {
     "Data Analytics Pro",
   ];
 
+  const trainings = [
+    {
+      title: "Excel Avancé",
+      description: "Améliorez votre maîtrise d'Excel et créez des tableaux de bord professionnels.",
+      date: "Novembre 2025",
+    },
+    {
+      title: "Power BI pour Contrôleurs de Gestion",
+      description: "Construisez vos reportings automatisés avec Power BI.",
+      date: "Décembre 2025",
+    },
+    {
+      title: "ERP et Transformation Digitale",
+      description: "Digitalisez vos processus avec des ERP modernes.",
+      date: "Janvier 2026",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
+      <NewsletterPopup />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
@@ -169,6 +190,25 @@ const Landing = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trainings Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-4">
+              Nos formations à venir
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Développez vos compétences avec nos formations pratiques et orientées résultats
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
+            {trainings.map((training, index) => (
+              <TrainingCard key={index} {...training} />
+            ))}
           </div>
         </div>
       </section>
