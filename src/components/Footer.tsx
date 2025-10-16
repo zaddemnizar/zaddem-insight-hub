@@ -101,10 +101,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
             <p>© {currentYear} Zaddem Consulting. Tous droits réservés.</p>
             <div className="flex gap-6">
-              <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
+              <Link to="/politique-confidentialite" className="hover:text-primary-foreground transition-colors">
                 Politique de confidentialité
               </Link>
-              <Link to="/terms" className="hover:text-primary-foreground transition-colors">
+              <Link to="/mentions-legales" className="hover:text-primary-foreground transition-colors">
                 Mentions légales
               </Link>
             </div>
