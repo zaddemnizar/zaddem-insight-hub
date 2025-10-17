@@ -11,6 +11,7 @@ const Navigation = () => {
   const navLinks = [
     { to: "/", label: "Accueil" },
     { to: "/about", label: "À propos" },
+    { to: "/formations", label: "Formations" },
     { to: "/contact", label: "Contact" },
   ];
 

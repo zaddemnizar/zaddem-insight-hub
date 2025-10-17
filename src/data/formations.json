@@ -1,0 +1,140 @@
+[
+  {
+    "id": "excel-avance",
+    "slug": "excel-avance",
+    "title": "Excel Avancé",
+    "category": "Excel",
+    "shortDescription": "Améliorez votre maîtrise d'Excel et créez des tableaux de bord professionnels.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    "description": "Maîtrisez les fonctionnalités avancées d'Excel pour optimiser votre productivité et créer des tableaux de bord dynamiques et professionnels.",
+    "objectives": [
+      "Maîtriser les formules et fonctions avancées (RECHERCHEV, INDEX/EQUIV, SI, etc.)",
+      "Créer des tableaux de bord interactifs avec des graphiques dynamiques",
+      "Automatiser vos tâches avec les macros et VBA",
+      "Analyser des données complexes avec les tableaux croisés dynamiques",
+      "Gérer et consolider de grandes bases de données"
+    ],
+    "program": [
+      "Fonctions avancées et formules complexes",
+      "Tableaux croisés dynamiques et analyse de données",
+      "Visualisation de données et création de graphiques",
+      "Introduction aux macros et automatisation",
+      "Gestion de bases de données et Power Query",
+      "Création de tableaux de bord professionnels"
+    ],
+    "prerequisites": "Connaissance de base d'Excel (saisie, formules simples, mise en forme)",
+    "targetAudience": "Contrôleurs de gestion, comptables, analystes, responsables administratifs et toute personne souhaitant optimiser son utilisation d'Excel",
+    "duration": "3 jours (21 heures)",
+    "price": "1200",
+    "currency": "TND",
+    "location": "Mahdia, Tunisie",
+    "mode": "Présentiel",
+    "date": "Novembre 2025",
+    "trainer": "Nizar Zaddem"
+  },
+  {
+    "id": "power-bi-controleurs",
+    "slug": "power-bi-controleurs",
+    "title": "Power BI pour Contrôleurs de Gestion",
+    "category": "Power BI",
+    "shortDescription": "Construisez vos reportings automatisés avec Power BI et transformez vos données en insights.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    "description": "Apprenez à créer des reportings automatisés et des tableaux de bord interactifs avec Power BI, l'outil de Business Intelligence de Microsoft.",
+    "objectives": [
+      "Comprendre l'écosystème Power BI et ses fonctionnalités",
+      "Connecter et transformer des données de sources multiples",
+      "Créer des modèles de données performants avec DAX",
+      "Concevoir des rapports interactifs et visuellement attractifs",
+      "Automatiser la mise à jour des reportings",
+      "Partager et collaborer avec Power BI Service"
+    ],
+    "program": [
+      "Introduction à Power BI Desktop et Power BI Service",
+      "Connexion aux sources de données et Power Query",
+      "Modélisation des données et relations",
+      "Introduction au langage DAX (mesures et colonnes calculées)",
+      "Visualisations avancées et conception de rapports",
+      "Publication et partage des rapports",
+      "Cas pratiques adaptés au contrôle de gestion"
+    ],
+    "prerequisites": "Bonne connaissance d'Excel. Une connaissance des bases de données est un plus.",
+    "targetAudience": "Contrôleurs de gestion, responsables financiers, analystes de données, directeurs administratifs et financiers",
+    "duration": "4 jours (28 heures)",
+    "price": "1800",
+    "currency": "TND",
+    "location": "Mahdia, Tunisie",
+    "mode": "Présentiel",
+    "date": "Décembre 2025",
+    "trainer": "Nizar Zaddem"
+  },
+  {
+    "id": "erp-transformation-digitale",
+    "slug": "erp-transformation-digitale",
+    "title": "ERP et Transformation Digitale",
+    "category": "ERP",
+    "shortDescription": "Digitalisez vos processus avec des ERP modernes et pilotez votre transformation digitale.",
+    "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+    "description": "Découvrez comment les ERP modernes peuvent transformer votre entreprise et accompagner votre transition vers le digital.",
+    "objectives": [
+      "Comprendre les enjeux de la transformation digitale",
+      "Identifier les besoins de votre entreprise en matière d'ERP",
+      "Découvrir les principales solutions ERP du marché",
+      "Maîtriser les étapes clés d'un projet ERP",
+      "Optimiser vos processus métier avec un ERP",
+      "Accompagner le changement et former les équipes"
+    ],
+    "program": [
+      "Introduction à la transformation digitale",
+      "Panorama des solutions ERP (SAP, Odoo, Sage, etc.)",
+      "Analyse des besoins et cahier des charges",
+      "Gestion de projet ERP : méthodologie et bonnes pratiques",
+      "Intégration et paramétrage d'un ERP",
+      "Conduite du changement et formation des utilisateurs",
+      "Cas pratiques et retours d'expérience"
+    ],
+    "prerequisites": "Aucun prérequis technique. Une expérience en gestion d'entreprise est recommandée.",
+    "targetAudience": "Dirigeants d'entreprise, responsables de projets digitaux, DSI, directeurs administratifs et financiers, consultants",
+    "duration": "2 jours (14 heures)",
+    "price": "900",
+    "currency": "TND",
+    "location": "Mahdia, Tunisie",
+    "mode": "Présentiel",
+    "date": "Janvier 2026",
+    "trainer": "Nizar Zaddem"
+  },
+  {
+    "id": "gestion-textile",
+    "slug": "gestion-textile",
+    "title": "Gestion et Optimisation dans l'Industrie Textile",
+    "category": "Textile",
+    "shortDescription": "Optimisez la gestion de votre entreprise textile avec des outils et méthodes éprouvés.",
+    "image": "https://images.unsplash.com/photo-1558769132-cb1aea3d8c7d?w=800&q=80",
+    "description": "Formation spécialisée pour l'industrie textile tunisienne : optimisez votre production, vos coûts et votre gestion administrative.",
+    "objectives": [
+      "Maîtriser les spécificités de la gestion textile",
+      "Optimiser le calcul des coûts de revient",
+      "Gérer efficacement les stocks et les approvisionnements",
+      "Améliorer la planification de la production",
+      "Utiliser les outils digitaux adaptés au secteur textile",
+      "Piloter la performance avec des indicateurs clés"
+    ],
+    "program": [
+      "Panorama du secteur textile en Tunisie",
+      "Calcul des coûts de revient et prix de vente",
+      "Gestion des stocks et optimisation des approvisionnements",
+      "Planification et suivi de production",
+      "Gestion administrative et financière",
+      "Outils digitaux pour l'industrie textile",
+      "Tableaux de bord et indicateurs de performance"
+    ],
+    "prerequisites": "Expérience dans l'industrie textile ou la gestion d'entreprise",
+    "targetAudience": "Dirigeants d'entreprises textiles, responsables de production, responsables administratifs et financiers, contrôleurs de gestion",
+    "duration": "3 jours (21 heures)",
+    "price": "1500",
+    "currency": "TND",
+    "location": "Mahdia, Tunisie",
+    "mode": "Présentiel",
+    "date": "Février 2026",
+    "trainer": "Nizar Zaddem"
+  }
+]

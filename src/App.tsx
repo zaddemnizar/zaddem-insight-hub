@@ -8,6 +8,8 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Newsletter from "./pages/Newsletter";
+import Formations from "./pages/Formations";
+import FormationDetail from "./pages/FormationDetail";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
@@ -24,6 +26,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
+            <Route path="/formations" element={<Formations />} />
+            <Route path="/formations/:slug" element={<FormationDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
