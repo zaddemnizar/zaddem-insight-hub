@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <img src={logo} alt="Zaddem Consulting" className="h-12 w-auto brightness-0 invert" />
+            <img src={logo} alt="Zaddem Consulting" className="h-12 w-auto" />
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
               Expert en consulting, formation et solutions digitales pour optimiser vos performances.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
             <h3 className="font-display font-bold text-lg mb-4">Suivez-nous</h3>
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/zaddem-consulting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
