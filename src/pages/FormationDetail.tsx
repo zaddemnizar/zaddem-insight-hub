@@ -43,34 +43,37 @@ const FormationDetail = () => {
       return;
     }
 
-    // Create mailto link with form data
-    const subject = `Inscription - ${formation.title}`;
-    const body = `
-Nouvelle inscription pour la formation : ${formation.title}
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      
+      const { error } = await supabase.functions.invoke('send-formation-registration', {
+        body: {
+          ...formData,
+          formationTitle: formation.title,
+          formationDate: formation.date,
+          formationPrice: `${formation.price} ${formation.currency}`,
+        }
+      });
 
-Nom et prénom : ${formData.name}
-Email : ${formData.email}
-Téléphone : ${formData.phone}
-Message : ${formData.message || "Aucun message"}
+      if (error) throw error;
 
-Formation : ${formation.title}
-Date : ${formation.date}
-Prix : ${formation.price} ${formation.currency}
-    `.trim();
+      toast({
+        title: "Demande envoyée !",
+        description: "Merci ! Votre message a bien été envoyé. Nous vous contacterons dans les plus brefs délais.",
+      });
 
-    const mailtoLink = `mailto:contact@zaddem-consulting.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    window.location.href = mailtoLink;
-
-    // Show success message
-    toast({
-      title: "Demande envoyée !",
-      description: "Merci pour votre inscription. Nous vous contacterons sous peu.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error sending registration:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
