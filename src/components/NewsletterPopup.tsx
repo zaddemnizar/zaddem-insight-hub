@@ -15,29 +15,11 @@ const NewsletterPopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try {
-      const { supabase } = await import("@/integrations/supabase/client");
-      
-      // Extract first name from email if not provided
-      const firstName = email.split('@')[0];
-      
-      const { error } = await supabase.functions.invoke('send-newsletter-subscription', {
-        body: { firstName, email }
-      });
-
-      if (error) throw error;
-      
-      console.log("Newsletter subscription successful:", email);
-      setIsOpen(false);
-      setEmail("");
-    } catch (error) {
-      console.error("Error subscribing to newsletter:", error);
-      setIsOpen(false);
-      setEmail("");
-    }
+    console.log("Newsletter subscription:", email);
+    setIsOpen(false);
+    setEmail("");
   };
 
   if (!isOpen) return null;

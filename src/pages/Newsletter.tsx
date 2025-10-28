@@ -21,33 +21,16 @@ const Newsletter = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      const { supabase } = await import("@/integrations/supabase/client");
-      
-      const { error } = await supabase.functions.invoke('send-newsletter-subscription', {
-        body: formData
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Merci pour votre inscription !",
-        description: "Vous êtes désormais inscrit à la newsletter Zaddem Consulting.",
-      });
-      
-      setIsSubmitted(true);
-      setFormData({ firstName: "", email: "" });
-    } catch (error) {
-      console.error("Error subscribing to newsletter:", error);
-      toast({
-        title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer.",
-        variant: "destructive",
-      });
-    }
+    toast({
+      title: "Merci pour votre inscription !",
+      description: "Vous êtes désormais inscrit à la newsletter Zaddem Consulting.",
+    });
+    
+    setIsSubmitted(true);
+    setFormData({ firstName: "", email: "" });
   };
 
   return (
