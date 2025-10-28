@@ -79,7 +79,7 @@ const Landing = () => {
                 </Button>
               </Link>
               <Link to="/about">
-                <Button size="lg" variant="outline" className="border-primary-foreground/20 hover:bg-primary-foreground/10 font-semibold text-lg px-8 text-cyan-950">
+                <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary hover:bg-primary-foreground/10 hover:text-primary-foreground font-semibold text-lg px-8">
                   En savoir plus
                 </Button>
               </Link>
@@ -192,7 +192,7 @@ const Landing = () => {
                 </Button>
               </Link>
               <Link to="/newsletter">
-                <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-lg px-8">
+                <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary hover:bg-primary-foreground/10 hover:text-primary-foreground font-semibold text-lg px-8">
                   S'abonner à la newsletter
                 </Button>
               </Link>
