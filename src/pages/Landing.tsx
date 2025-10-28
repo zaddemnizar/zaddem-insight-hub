@@ -6,90 +6,63 @@ import TestimonialCard from "@/components/TestimonialCard";
 import TrainingCard from "@/components/TrainingCard";
 import NewsletterPopup from "@/components/NewsletterPopup";
 import heroImage from "@/assets/hero-consulting.jpg";
-
 const Landing = () => {
-  const services = [
-    {
-      icon: BarChart3,
-      title: "Consulting industriel",
-      description: "Optimisation de vos processus textile et contrôle de gestion pour améliorer vos performances opérationnelles.",
-    },
-    {
-      icon: Database,
-      title: "Implémentation ERP",
-      description: "Déploiement et configuration de solutions ERP adaptées à votre secteur d'activité.",
-    },
-    {
-      icon: GraduationCap,
-      title: "Formations Excel & Power BI",
-      description: "Maîtrisez Excel et Power BI pour transformer vos données en décisions stratégiques.",
-    },
-    {
-      icon: Code2,
-      title: "Développement d'applications",
-      description: "Solutions digitales sur mesure pour automatiser vos processus métiers.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Ahmed Ben Ali",
-      role: "Directeur Financier, Textile Group",
-      content: "Grâce à Zaddem Consulting, nous avons optimisé notre contrôle de gestion et gagné 30% de temps sur nos reportings.",
-      rating: 5,
-    },
-    {
-      name: "Leila Mansour",
-      role: "Responsable Formation, IndusTech",
-      content: "La formation Power BI a transformé notre façon d'analyser les données. Des résultats concrets dès la première semaine.",
-      rating: 5,
-    },
-    {
-      name: "Mohamed Trabelsi",
-      role: "CEO, Consulting Partners",
-      content: "Un expert qui combine parfaitement compétences techniques et vision stratégique. Très recommandé !",
-      rating: 5,
-    },
-  ];
-
-  const partners = [
-    "Microsoft Partner",
-    "SAP Certified",
-    "Textile Excellence",
-    "Data Analytics Pro",
-  ];
-
-  const trainings = [
-    {
-      title: "Excel Avancé",
-      description: "Améliorez votre maîtrise d'Excel et créez des tableaux de bord professionnels.",
-      date: "Novembre 2025",
-    },
-    {
-      title: "Power BI pour Contrôleurs de Gestion",
-      description: "Construisez vos reportings automatisés avec Power BI.",
-      date: "Décembre 2025",
-    },
-    {
-      title: "ERP et Transformation Digitale",
-      description: "Digitalisez vos processus avec des ERP modernes.",
-      date: "Janvier 2026",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const services = [{
+    icon: BarChart3,
+    title: "Consulting industriel",
+    description: "Optimisation de vos processus textile et contrôle de gestion pour améliorer vos performances opérationnelles."
+  }, {
+    icon: Database,
+    title: "Implémentation ERP",
+    description: "Déploiement et configuration de solutions ERP adaptées à votre secteur d'activité."
+  }, {
+    icon: GraduationCap,
+    title: "Formations Excel & Power BI",
+    description: "Maîtrisez Excel et Power BI pour transformer vos données en décisions stratégiques."
+  }, {
+    icon: Code2,
+    title: "Développement d'applications",
+    description: "Solutions digitales sur mesure pour automatiser vos processus métiers."
+  }];
+  const testimonials = [{
+    name: "Ahmed Ben Ali",
+    role: "Directeur Financier, Textile Group",
+    content: "Grâce à Zaddem Consulting, nous avons optimisé notre contrôle de gestion et gagné 30% de temps sur nos reportings.",
+    rating: 5
+  }, {
+    name: "Leila Mansour",
+    role: "Responsable Formation, IndusTech",
+    content: "La formation Power BI a transformé notre façon d'analyser les données. Des résultats concrets dès la première semaine.",
+    rating: 5
+  }, {
+    name: "Mohamed Trabelsi",
+    role: "CEO, Consulting Partners",
+    content: "Un expert qui combine parfaitement compétences techniques et vision stratégique. Très recommandé !",
+    rating: 5
+  }];
+  const partners = ["Microsoft Partner", "SAP Certified", "Textile Excellence", "Data Analytics Pro"];
+  const trainings = [{
+    title: "Excel Avancé",
+    description: "Améliorez votre maîtrise d'Excel et créez des tableaux de bord professionnels.",
+    date: "Novembre 2025"
+  }, {
+    title: "Power BI pour Contrôleurs de Gestion",
+    description: "Construisez vos reportings automatisés avec Power BI.",
+    date: "Décembre 2025"
+  }, {
+    title: "ERP et Transformation Digitale",
+    description: "Digitalisez vos processus avec des ERP modernes.",
+    date: "Janvier 2026"
+  }];
+  return <div className="min-h-screen">
       <NewsletterPopup />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `linear-gradient(135deg, hsl(210 100% 20% / 0.95) 0%, hsl(210 80% 30% / 0.9) 100%), url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        <div className="absolute inset-0 z-0" style={{
+        backgroundImage: `linear-gradient(135deg, hsl(210 100% 20% / 0.95) 0%, hsl(210 80% 30% / 0.9) 100%), url(${heroImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }} />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl animate-fade-in-up">
             <h1 className="font-display font-extrabold text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight mb-6">
@@ -106,7 +79,7 @@ const Landing = () => {
                 </Button>
               </Link>
               <Link to="/about">
-                <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-lg px-8">
+                <Button size="lg" variant="outline" className="border-primary-foreground/20 hover:bg-primary-foreground/10 font-semibold text-lg px-8 text-cyan-950">
                   En savoir plus
                 </Button>
               </Link>
@@ -127,9 +100,7 @@ const Landing = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
+            {services.map((service, index) => <ServiceCard key={index} {...service} />)}
           </div>
         </div>
       </section>
@@ -166,9 +137,7 @@ const Landing = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
+            {testimonials.map((testimonial, index) => <TestimonialCard key={index} {...testimonial} />)}
           </div>
         </div>
       </section>
@@ -181,14 +150,9 @@ const Landing = () => {
               Nos certifications et partenariats
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {partners.map((partner, index) => (
-                <div
-                  key={index}
-                  className="px-6 py-3 bg-card rounded-lg border border-border text-muted-foreground font-semibold"
-                >
+              {partners.map((partner, index) => <div key={index} className="px-6 py-3 bg-card rounded-lg border border-border text-muted-foreground font-semibold">
                   {partner}
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -206,9 +170,7 @@ const Landing = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
-            {trainings.map((training, index) => (
-              <TrainingCard key={index} {...training} />
-            ))}
+            {trainings.map((training, index) => <TrainingCard key={index} {...training} />)}
           </div>
         </div>
       </section>
@@ -238,8 +200,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;

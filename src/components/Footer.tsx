@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { Facebook, Linkedin, Youtube, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
@@ -50,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span>Mahdia, Tunisie</span>
+                <span>Monastir, Tunisie</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-primary-foreground/80">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
@@ -65,31 +62,13 @@ const Footer = () => {
           <div>
             <h3 className="font-display font-bold text-lg mb-4">Suivez-nous</h3>
             <div className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/company/zaddem-consulting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
-                aria-label="LinkedIn"
-              >
+              <a href="https://www.linkedin.com/company/zaddem-consulting" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a
-                href="https://www.youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
-                aria-label="YouTube"
-              >
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors" aria-label="YouTube">
                 <Youtube size={20} />
               </a>
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
-                aria-label="Facebook"
-              >
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
             </div>
@@ -111,8 +90,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
