@@ -39,21 +39,46 @@ const Contact = () => {
       // Validate form data
       const validatedData = contactSchema.parse(formData);
       
-      // Simulate form submission with validated data
-      setTimeout(() => {
+      // Send to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "2a2a6ba5-06b0-494d-bdfc-b1fa4a9039b9",
+          name: validatedData.name,
+          email: validatedData.email,
+          subject: validatedData.subject,
+          message: validatedData.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
         toast({
           title: "Message envoyé !",
           description: "Nous vous répondrons dans les plus brefs délais.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
-        setIsSubmitting(false);
-      }, 1000);
+      } else {
+        throw new Error("Échec de l'envoi");
+      }
+      
+      setIsSubmitting(false);
     } catch (error) {
       setIsSubmitting(false);
       if (error instanceof z.ZodError) {
         toast({
           title: "Erreur de validation",
           description: error.errors[0].message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Erreur",
+          description: "Une erreur s'est produite lors de l'envoi du message.",
           variant: "destructive",
         });
       }
