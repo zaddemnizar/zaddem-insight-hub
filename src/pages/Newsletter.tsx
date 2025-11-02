@@ -5,6 +5,12 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Mail, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import newsletterImage from "@/assets/newsletter-illustration.jpg";
+import { z } from "zod";
+
+const newsletterSchema = z.object({
+  firstName: z.string().trim().min(1, "Le prénom est requis").max(100, "Le prénom ne peut pas dépasser 100 caractères"),
+  email: z.string().trim().email("Email invalide").max(255, "L'email ne peut pas dépasser 255 caractères"),
+});
 
 const Newsletter = () => {
   const { toast } = useToast();
@@ -24,13 +30,26 @@ const Newsletter = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    toast({
-      title: "Merci pour votre inscription !",
-      description: "Vous êtes désormais inscrit à la newsletter Zaddem Consulting.",
-    });
-    
-    setIsSubmitted(true);
-    setFormData({ firstName: "", email: "" });
+    try {
+      // Validate form data
+      const validatedData = newsletterSchema.parse(formData);
+      
+      toast({
+        title: "Merci pour votre inscription !",
+        description: "Vous êtes désormais inscrit à la newsletter Zaddem Consulting.",
+      });
+      
+      setIsSubmitted(true);
+      setFormData({ firstName: "", email: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Erreur de validation",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   return (

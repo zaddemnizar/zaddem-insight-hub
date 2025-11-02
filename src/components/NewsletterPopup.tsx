@@ -2,8 +2,15 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const newsletterPopupSchema = z.object({
+  email: z.string().trim().email("Email invalide").max(255, "L'email ne peut pas dépasser 255 caractères"),
+});
 
 const NewsletterPopup = () => {
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
 
@@ -17,9 +24,27 @@ const NewsletterPopup = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter subscription:", email);
-    setIsOpen(false);
-    setEmail("");
+    
+    try {
+      // Validate email
+      newsletterPopupSchema.parse({ email });
+      
+      toast({
+        title: "Merci pour votre inscription !",
+        description: "Vous êtes désormais inscrit à la newsletter Zaddem Consulting.",
+      });
+      
+      setIsOpen(false);
+      setEmail("");
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Erreur de validation",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   if (!isOpen) return null;

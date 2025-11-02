@@ -8,6 +8,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import formationsData from "@/data/formations.json";
+import { z } from "zod";
+
+const formationSchema = z.object({
+  name: z.string().trim().min(1, "Le nom est requis").max(100, "Le nom ne peut pas dépasser 100 caractères"),
+  email: z.string().trim().email("Email invalide").max(255, "L'email ne peut pas dépasser 255 caractères"),
+  phone: z.string().regex(/^[+]?[0-9]{8,15}$/, "Format de téléphone invalide (8-15 chiffres)"),
+  message: z.string().max(1000, "Le message ne peut pas dépasser 1000 caractères").optional(),
+});
 
 const FormationDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -32,45 +40,48 @@ const FormationDetail = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Validate form
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast({
-        title: "Erreur",
-        description: "Veuillez remplir tous les champs obligatoires.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
+    try {
+      // Validate form data with Zod
+      const validatedData = formationSchema.parse(formData);
 
-    // Create mailto link with form data
-    const subject = `Inscription - ${formation.title}`;
-    const body = `
+      // Create mailto link with validated data
+      const subject = `Inscription - ${formation.title}`;
+      const body = `
 Nouvelle inscription pour la formation : ${formation.title}
 
-Nom et prénom : ${formData.name}
-Email : ${formData.email}
-Téléphone : ${formData.phone}
-Message : ${formData.message || "Aucun message"}
+Nom et prénom : ${validatedData.name}
+Email : ${validatedData.email}
+Téléphone : ${validatedData.phone}
+Message : ${validatedData.message || "Aucun message"}
 
 Formation : ${formation.title}
 Date : ${formation.date}
 Prix : ${formation.price} ${formation.currency}
-    `.trim();
+      `.trim();
 
-    const mailtoLink = `mailto:contact@zaddem-consulting.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    window.location.href = mailtoLink;
+      const mailtoLink = `mailto:contact@zaddem-consulting.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoLink;
 
-    // Show success message
-    toast({
-      title: "Demande envoyée !",
-      description: "Merci pour votre inscription. Nous vous contacterons sous peu.",
-    });
+      // Show success message
+      toast({
+        title: "Demande envoyée !",
+        description: "Merci pour votre inscription. Nous vous contacterons sous peu.",
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setIsSubmitting(false);
+    } catch (error) {
+      setIsSubmitting(false);
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Erreur de validation",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      }
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
